@@ -1,7 +1,6 @@
 # ClientInfo
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Travis](https://img.shields.io/travis/fynduck/client-info.svg?style=flat-square)]()
 [![Total Downloads](https://img.shields.io/packagist/dt/fynduck/client-info.svg?style=flat-square)](https://packagist.org/packages/fynduck/client-info)
 
 ## Install
