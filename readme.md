@@ -27,13 +27,6 @@ Get client refer domain: `$this->getDomainReferer(request()->header('referer'))`
 
 > **Note:** all method have default value from request()
 
-## Testing
-Run the tests with:
-
-``` bash
-vendor/bin/phpunit
-```
-
 ## Contributing
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
