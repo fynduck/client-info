@@ -1,0 +1,41 @@
+{
+    "name": "fynduck/client-info",
+    "description": "A description for clientInfo.",
+    "type": "package",
+    "license": "MIT",
+    "keywords": [
+        "laravel"
+    ],
+    "authors": [
+        {
+            "name": "fynduck",
+            "email": "stason.k12@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fynduck\\ClientInfo\\": "./src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fynduck\\ClientInfo\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fynduck\\ClientInfo\\ClientInfoServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.6"
+    }
+}
