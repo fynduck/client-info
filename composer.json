@@ -1,6 +1,6 @@
 {
     "name": "fynduck/client-info",
-    "description": "A description for clientInfo.",
+    "description": "Get client info from request header",
     "type": "package",
     "license": "MIT",
     "keywords": [
