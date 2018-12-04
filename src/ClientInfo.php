@@ -94,7 +94,7 @@ trait ClientInfo
         foreach ($browser_array as $regex => $value) {
             if (preg_match($regex, $agent)) {
                 $data['browserName'] = $value;
-                $data['ub'] = str_replace(['/i', '/'], '', $regex);
+                $data['ub'] = ucfirst(str_replace(['/i', '/'], '', $regex));
             } elseif (strpos($agent, 'bot') !== false) {
                 $data['browserName'] = 'Bots';
                 $data['ub'] = 'Bot';
@@ -129,14 +129,14 @@ trait ClientInfo
             if (strripos($agent, "Version") < strripos($agent, $ub)) {
                 $data['version'] = isset($matches['version'][0]) ? $matches['version'][0] : 0;
             } else {
-                if (!empty($matches['version'])) {
+                if (!empty($matches['version']) && isset($matches['version'][1])) {
                     $data['version'] = $matches['version'][1];
                 } else {
                     $data['version'] = 0;
                 }
             }
         } else {
-            $data['version'] = $matches['version'][0];
+            $data['version'] = isset($matches['version'][0]) ? $matches['version'][0] : 0;
         }
 
         $data['pattern '] = $pattern;
