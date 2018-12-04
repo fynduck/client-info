@@ -38,6 +38,38 @@ trait ClientInfo
         return $platform;
     }
 
+    public function getPlatformVersion($agent = null)
+    {
+        if (!$agent)
+            $agent = request()->header('User-Agent');
+
+        $platform_v = 0;
+
+        $os_array = array(
+            '/windows nt 10/i'      => '10',
+            '/windows nt 6.3/i'     => '8.1',
+            '/windows nt 6.2/i'     => '8',
+            '/windows nt 6.1/i'     => '7',
+            '/windows nt 6.0/i'     => 'Vista',
+            '/windows nt 5.2/i'     => 'Server 2003/XP x64',
+            '/windows nt 5.1/i'     => 'XP',
+            '/windows xp/i'         => 'XP',
+            '/windows nt 5.0/i'     => '2000',
+            '/windows me/i'         => 'ME',
+            '/win98/i'              => '98',
+            '/win95/i'              => '95',
+            '/win16/i'              => '3.11',
+            '/macintosh|mac os x/i' => 'X',
+            '/mac_powerpc/i'        => '9'
+        );
+
+        foreach ($os_array as $regex => $value)
+            if (preg_match($regex, $agent))
+                $platform_v = $value;
+
+        return $platform_v;
+    }
+
     public function getBrowserName($agent = null)
     {
         if (!$agent)
