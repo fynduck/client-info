@@ -127,7 +127,7 @@ trait ClientInfo
             //we will have two since we are not using 'other' argument yet
             //see if version is before or after the name
             if (strripos($agent, "Version") < strripos($agent, $ub)) {
-                $data['version'] = isset($matches['version']) ? $matches['version'][0] : 0;
+                $data['version'] = isset($matches['version'][0]) ? $matches['version'][0] : 0;
             } else {
                 if (!empty($matches['version'])) {
                     $data['version'] = $matches['version'][1];
