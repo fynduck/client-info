@@ -111,7 +111,7 @@ trait ClientInfo
 
         if (!$ub) {
             $browserInfo = $this->getBrowserName($agent);
-            if ($browserInfo)
+            if ($browserInfo && isset($browserInfo['ub']) && $browserInfo['ub'])
                 return $this->getBrowserVersion($agent, $browserInfo['ub']);
 
             return null;
