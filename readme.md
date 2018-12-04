@@ -19,6 +19,8 @@ class NameClass
 ```
 Get client platform: `$this->getPlatform(request()->header('User-Agent'))`
 
+Get client platform version: `$this->getPlatformVersion(request()->header('User-Agent'))`
+
 Get client browser name: `$this->getBrowserName(request()->header('User-Agent'))`
 
 Get client browser version: `$this->getBrowserVersion(request()->header('User-Agent'), 'ub')` (ub browser get from method `getBrowserName`)
